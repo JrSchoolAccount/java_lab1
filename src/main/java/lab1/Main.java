@@ -44,7 +44,7 @@ public class Main {
                     break;
                 }
             } catch (IllegalArgumentException e) {
-                System.out.println("You can't do that. Try again.");
+                System.out.println("Invalid Input. Try again.");
             }
         }
     }
