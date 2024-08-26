@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fe2c85c1-f170-4e9f-9f46-5c81992577ae" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../.idea/Lernia exempel.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lab1/InputPrices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab1/Input.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab1/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +22,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "JrSchoolAccount"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/JrSchoolAccount/java_lab1.git",
+    "accountId": "af363904-0017-4827-9d58-dc3612e389b2"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -73,7 +81,7 @@
       <updated>1724239915467</updated>
       <workItem from="1724239916416" duration="2825000" />
       <workItem from="1724351711981" duration="1056000" />
-      <workItem from="1724654245084" duration="4326000" />
+      <workItem from="1724654245084" duration="4587000" />
     </task>
     <servers />
   </component>
