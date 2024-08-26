@@ -23,6 +23,7 @@ public class Main {
     }
 
     public static void menu() {
+        InputPrices inputPrices = new InputPrices();
         while (true) {
             System.out.println(
                             "Elpriser\n" +
@@ -38,6 +39,10 @@ public class Main {
             try {
                 if (!VALID_INPUTS.contains(input)) {
                     throw new IllegalArgumentException("Invalid input: " + input);
+                }
+
+                if (input.equals("1")) {
+                    Price[] prices = inputPrices.getHourlyPrices(sc);
                 }
 
                 if (input.equals("e")) {
