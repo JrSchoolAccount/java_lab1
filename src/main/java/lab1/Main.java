@@ -25,6 +25,7 @@ public class Main {
         InputPrices inputPrices = new InputPrices();
         Price[] prices = null;
 
+
         while (true) {
             System.out.println("""
                     
@@ -53,6 +54,10 @@ public class Main {
 
                 if (input.equals("3")) {
                     Sorting.sortArr(prices);
+                }
+
+                if (input.equals("4")) {
+                    ChargingOptimizer.OptimalChargingTime(prices);
                 }
 
                 if (input.equals("e")) {
