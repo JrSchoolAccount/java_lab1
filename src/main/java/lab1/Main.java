@@ -1,7 +1,6 @@
 package lab1;
 
 import java.util.HashSet;
-import java.util.Locale;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -24,8 +23,10 @@ public class Main {
 
     public static void menu() {
         InputPrices inputPrices = new InputPrices();
+        Price[] prices = null;
+
         while (true) {
-            System.out.println(
+            System.out.println("\n"+
                             "Elpriser\n" +
                             "========\n" +
                             "1. Inmatning\n" +
@@ -42,7 +43,11 @@ public class Main {
                 }
 
                 if (input.equals("1")) {
-                    Price[] prices = inputPrices.getHourlyPrices(sc);
+                    prices = inputPrices.getHourlyPrices(sc);
+                }
+
+                if (input.equals("2")) {
+                    MinMaxAverage.analyzePrices(prices);
                 }
 
                 if (input.equals("e")) {

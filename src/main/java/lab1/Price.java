@@ -9,4 +9,7 @@ public class Price {
         this.hour = hour;
         this.price = price;
     }
+
+    int getPrice() {return price;}
+    String getHour() {return hour;}
 }
