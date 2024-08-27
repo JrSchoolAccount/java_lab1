@@ -26,14 +26,15 @@ public class Main {
         Price[] prices = null;
 
         while (true) {
-            System.out.println("\n"+
-                            "Elpriser\n" +
-                            "========\n" +
-                            "1. Inmatning\n" +
-                            "2. Min, Max och Medel\n" +
-                            "3. Sortera\n" +
-                            "4. Bästa Laddningstid (4h)\n" +
-                            "e. Avsluta");
+            System.out.println("""
+                    
+                    Elpriser
+                    ========
+                    1. Inmatning
+                    2. Min, Max och Medel
+                    3. Sortera
+                    4. Bästa Laddningstid (4h)
+                    e. Avsluta""");
 
             String input = sc.nextLine().toLowerCase();
 
@@ -48,6 +49,10 @@ public class Main {
 
                 if (input.equals("2")) {
                     MinMaxAverage.analyzePrices(prices);
+                }
+
+                if (input.equals("3")) {
+                    Sorting.sortArr(prices);
                 }
 
                 if (input.equals("e")) {
