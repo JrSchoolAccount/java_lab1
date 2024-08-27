@@ -9,10 +9,11 @@ public class Sorting {
             System.out.println("No prices found! Please run \"1. Inmatning\" first.");
             return;
         }
+        Price[] sortedPrices = Arrays.copyOf(prices, prices.length);
 
-        Arrays.sort(prices, Comparator.comparingDouble(Price::getPrice));
+        Arrays.sort(sortedPrices, Comparator.comparingDouble(Price::getPrice));
 
-        for (Price price : prices) {
+        for (Price price : sortedPrices) {
             System.out.println(price.getHour() + ": " + price.getPrice() + " öre");
         }
     }
