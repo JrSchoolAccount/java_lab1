@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class ChargingOptimizer {
     public static void OptimalChargingTime(Price[] prices) {
         if (prices == null || prices.length == 0) {
-            System.out.println("No prices found! Please run \"1. Inmatning\" first.");
+            System.out.println("Priser saknas! Vänligen kör \"1. Inmatning\" först.");
             return;
         }
 
@@ -16,7 +16,7 @@ public class ChargingOptimizer {
             int total = 0;
 
             for (int j = i; j < i + 4; j++) {
-                total += prices[j].getPrice();
+                total += prices[j].price();
             }
 
             if (total < minTotal) {
@@ -27,8 +27,8 @@ public class ChargingOptimizer {
 
         int averagePrice = minTotal / 4;
 
-        System.out.println("Best time to start charging: " + prices[bestStartHour].getHour());
-        System.out.println("Total cost: " + minTotal + " öre/kWh");
-        System.out.println("Average price: " + averagePrice + " öre/kWh");
+        System.out.println("Bästa tid att börja ladda: " + prices[bestStartHour].hour());
+        System.out.println("Total kostnad: " + minTotal + " öre/kWh");
+        System.out.println("Medelpris: " + averagePrice + " öre/kWh");
     }
 }

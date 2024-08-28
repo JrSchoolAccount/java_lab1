@@ -4,7 +4,7 @@ public class MinMaxAverage {
 
     public static void analyzePrices(Price[] prices) {
         if (prices == null || prices.length == 0) {
-            System.out.println("No prices found! Please run \"1. Inmatning\" first.");
+            System.out.println("Priser saknas! Vänligen kör \"1. Inmatning\" först.");
             return;
         }
 
@@ -17,8 +17,8 @@ public class MinMaxAverage {
 
 
         for (Price price : prices) {
-            int currentPrice = price.getPrice();
-            String currentHour = price.getHour();
+            int currentPrice = price.price();
+            String currentHour = price.hour();
 
             if (currentPrice < min) {
                 min = currentPrice;
@@ -36,8 +36,8 @@ public class MinMaxAverage {
 
         int average = total / prices.length;
 
-        System.out.println("Lägsta priset : " + minHour + "h, " + min + " öre/kWh");
-        System.out.println("Högsta priset : " + maxHour + "h, " + max + " öre/kWh");
-        System.out.println("Medel priset  : " + average + " öre/kWh");
+        System.out.println("Lägstapris : " + minHour + "h, " + min + " öre/kWh");
+        System.out.println("Högstapris : " + maxHour + "h, " + max + " öre/kWh");
+        System.out.println("Medelpriset  : " + average + " öre/kWh");
     }
 }
