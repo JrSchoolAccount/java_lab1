@@ -3,7 +3,7 @@ package lab1;
 public class MinMaxAverage {
 
     public static void analyzePrices(Price[] prices) {
-        if (prices == null || prices.length == 0) {
+        if (prices.length == 0) {
             System.out.println("Priser saknas! Vänligen kör \"1. Inmatning\" först.");
             return;
         }

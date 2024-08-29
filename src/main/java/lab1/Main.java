@@ -23,7 +23,7 @@ public class Main {
 
     public static void menu() {
         InputPrices inputPrices = new InputPrices();
-        Price[] prices = null;
+        Price[] prices = new Price[0];
 
 
         while (true) {
