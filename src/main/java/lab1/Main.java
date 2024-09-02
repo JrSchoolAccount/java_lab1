@@ -14,6 +14,7 @@ public class Main {
         VALID_INPUTS.add("2");
         VALID_INPUTS.add("3");
         VALID_INPUTS.add("4");
+        VALID_INPUTS.add("5");
         VALID_INPUTS.add("e");
     }
 
@@ -35,6 +36,7 @@ public class Main {
                     2. Min, Max och Medel
                     3. Sortera
                     4. Bästa Laddningstid (4h)
+                    5. Inmatning från elpriser.csv
                     e. Avsluta""");
 
             String input = sc.nextLine().toLowerCase();
@@ -58,6 +60,10 @@ public class Main {
 
                 if (input.equals("4")) {
                     ChargingOptimizer.OptimalChargingTime(prices);
+                }
+
+                if (input.equals("5")) {
+                    prices = inputPrices.getPricesFromCsv();
                 }
 
                 if (input.equals("e")) {

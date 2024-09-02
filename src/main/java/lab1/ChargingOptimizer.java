@@ -1,11 +1,10 @@
 package lab1;
 
-import java.util.Arrays;
 
 public class ChargingOptimizer {
     public static void OptimalChargingTime(Price[] prices) {
         if (prices.length == 0) {
-            System.out.println("Priser saknas! Vänligen kör \"1. Inmatning\" först.");
+            System.out.println("Priser saknas! Vänligen kör \"1. Inmatning\" eller \"5. Inmatning från elpriser.csv\" först.");
             return;
         }
 

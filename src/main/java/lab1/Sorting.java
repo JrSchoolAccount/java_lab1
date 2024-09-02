@@ -6,7 +6,7 @@ import java.util.Comparator;
 public class Sorting {
     public static void sortArr(Price[] prices) {
         if (prices.length == 0) {
-            System.out.println("Priser saknas! Vänligen kör \"1. Inmatning\" först.");
+            System.out.println("Priser saknas! Vänligen kör \"1. Inmatning\" eller \"5. Inmatning från elpriser.csv\" först.");
             return;
         }
 
