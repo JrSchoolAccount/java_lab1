@@ -3,10 +3,6 @@ package lab1;
 
 public class ChargingOptimizer {
     public static void OptimalChargingTime(Price[] prices) {
-        if (prices.length == 0) {
-            System.out.println("Priser saknas! Vänligen kör \"1. Inmatning\" eller \"5. Inmatning från elpriser.csv\" först.");
-            return;
-        }
 
         int minTotal = Integer.MAX_VALUE;
         int bestStartHour = 0;

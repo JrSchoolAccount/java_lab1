@@ -3,10 +3,6 @@ package lab1;
 public class MinMaxAverage {
 
     public static void analyzePrices(Price[] prices) {
-        if (prices.length == 0) {
-            System.out.println("Priser saknas! Vänligen kör \"1. Inmatning\" eller \"5. Inmatning från elpriser.csv\" först.");
-            return;
-        }
 
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;

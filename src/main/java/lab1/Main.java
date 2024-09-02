@@ -1,34 +1,35 @@
 package lab1;
 
-import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
 public class Main {
 
-    public static Scanner sc = new Scanner(System.in);
-    private static final Set<String> VALID_INPUTS = new HashSet<>();
-
-    static {
-        VALID_INPUTS.add("1");
-        VALID_INPUTS.add("2");
-        VALID_INPUTS.add("3");
-        VALID_INPUTS.add("4");
-        VALID_INPUTS.add("5");
-        VALID_INPUTS.add("e");
-    }
+    private static final Scanner sc = new Scanner(System.in);
+    private static final Set<String> VALID_INPUTS = Set.of("1", "2", "3", "4", "5", "e");
+    private static Price[] prices = new Price[0];
 
     public static void main(String[] args) {
         menu();
     }
 
-    public static void menu() {
+    private static void menu() {
         InputPrices inputPrices = new InputPrices();
-        Price[] prices = new Price[0];
-
 
         while (true) {
-            System.out.println("""
+            displayMenu();
+            String input = sc.nextLine().toLowerCase();
+
+            if (!isValidInput(input)) {
+                System.out.println("Invalid Input. Try again.");
+            } else {
+                handleInput(input, inputPrices);
+            }
+        }
+    }
+
+    private static void displayMenu() {
+        System.out.println("""
                     
                     Elpriser
                     ========
@@ -38,40 +39,28 @@ public class Main {
                     4. Bästa Laddningstid (4h)
                     5. Inmatning från elpriser.csv
                     e. Avsluta""");
+    }
 
-            String input = sc.nextLine().toLowerCase();
+    private static boolean isValidInput(String input) {
+        return VALID_INPUTS.contains(input);
+    }
 
-            try {
-                if (!VALID_INPUTS.contains(input)) {
-                    throw new IllegalArgumentException("Invalid input: " + input);
-                }
+    private static boolean arePricesAvailable() {
+        if (prices.length == 0) {
+            System.out.println("Priser saknas! Vänligen kör \"1. Inmatning\" eller \"5. Inmatning från elpriser.csv\" först.");
+            return false;
+        }
+        return true;
+    }
 
-                if (input.equals("1")) {
-                    prices = inputPrices.getHourlyPrices(sc);
-                }
-
-                if (input.equals("2")) {
-                    MinMaxAverage.analyzePrices(prices);
-                }
-
-                if (input.equals("3")) {
-                    Sorting.sortArr(prices);
-                }
-
-                if (input.equals("4")) {
-                    ChargingOptimizer.OptimalChargingTime(prices);
-                }
-
-                if (input.equals("5")) {
-                    prices = inputPrices.getPricesFromCsv();
-                }
-
-                if (input.equals("e")) {
-                    break;
-                }
-            } catch (IllegalArgumentException e) {
-                System.out.println("Invalid Input. Try again.");
-            }
+    private static void handleInput(String input, InputPrices inputPrices) {
+        switch (input) {
+            case "1" -> prices = inputPrices.getHourlyPrices(sc);
+            case "2" -> {if (arePricesAvailable()) {MinMaxAverage.analyzePrices(prices);}}
+            case "3" -> {if (arePricesAvailable()) {Sorting.sortArr(prices);}}
+            case "4" -> {if (arePricesAvailable()) {ChargingOptimizer.OptimalChargingTime(prices);}}
+            case "5" -> prices = inputPrices.getPricesFromCsv();
+            case "e" -> System.exit(0);
         }
     }
 }
