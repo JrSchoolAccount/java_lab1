@@ -56,11 +56,19 @@ public class Main {
     private static void handleInput(String input, InputPrices inputPrices) {
         switch (input) {
             case "1" -> prices = inputPrices.getHourlyPrices(sc);
-            case "2" -> {if (arePricesAvailable()) {MinMaxAverage.analyzePrices(prices);}}
-            case "3" -> {if (arePricesAvailable()) {Sorting.sortArr(prices);}}
-            case "4" -> {if (arePricesAvailable()) {ChargingOptimizer.OptimalChargingTime(prices);}}
             case "5" -> prices = inputPrices.getPricesFromCsv();
             case "e" -> System.exit(0);
+            default -> handlePriceDependentCases(input);
+        }
+    }
+
+    private static void handlePriceDependentCases(String input) {
+        if (!arePricesAvailable()) return;
+
+        switch (input) {
+            case "2" -> MinMaxAverage.analyzePrices(prices);
+            case "3" -> Sorting.sortArr(prices);
+            case "4" -> ChargingOptimizer.OptimalChargingTime(prices);
         }
     }
 }
